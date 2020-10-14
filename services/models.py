@@ -16,6 +16,7 @@ class ServiceListingPage(Page):
     ]
 
 class ServicePage(Page):
+    tamplate = 'services/service_page.html'
     description = models.TextField(
         blank = True,
         max_length = 500,
