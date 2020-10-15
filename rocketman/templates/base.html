@@ -29,12 +29,15 @@
     <body>
         {% wagtailuserbar %}
 
+        {% include 'includes/header.html' %}
+
         {% block banner %}{% endblock banner%}
         
         <main id='content' class='container my-4' role='main'>
             {% block content %}{% endblock %}
         </main>
         
+        {% include 'includes/footer.html' %}
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
