@@ -1,0 +1,12 @@
+{% load %}
+{% for card in self.cards %}
+    <h3>{{ card.title }}</h3>
+    {% if card.text %}
+        <p>{{ card.text }}</p>
+    {% endif %}
+
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+{% endfor %}

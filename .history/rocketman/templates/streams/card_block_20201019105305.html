@@ -1,0 +1,11 @@
+{% for card in self.cards %}
+    <h3>{{ card.title }}</h3>
+    {% if card.text %}
+        <p>{{ card.text }}</p>
+    {% endi%}
+
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+{% endfor %}

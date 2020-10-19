@@ -1,0 +1,1 @@
+fromwagtail.core
