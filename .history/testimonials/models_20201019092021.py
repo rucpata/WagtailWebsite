@@ -5,6 +5,7 @@ from wagtail.snippets.models import register_snippet
 @register_snippet
 class Testimonial(models.Model):
     '''A testimonial class.'''
+     =blocks.TextBlock(re)
     quote = models.TextField(
         max_length=500,
         blank=False,

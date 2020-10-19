@@ -5,15 +5,16 @@ from wagtail.snippets.models import register_snippet
 @register_snippet
 class Testimonial(models.Model):
     '''A testimonial class.'''
+
     quote = models.TextField(
-        max_length=500,
-        blank=False,
+        max_length=500, 
+        blank=False, 
         null=False
     )
 
     atribution = models.CharField(
-        max_length=50,
-        blank=False,
+        max_length=50, 
+        blank=False, 
         null=False
     )
 
