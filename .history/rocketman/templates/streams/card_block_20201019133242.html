@@ -1,0 +1,53 @@
+<!-- Cards Block -->
+
+<div class='row justyfy-content-center'>
+    {% for card in self.cards %}
+    <div class = 'col-md-6 d-flex align-items-stretch {% if not forloop.first %} mt-4 mt-md-0{% endif %}'>
+        <div class='card-mb-3 text-center'>
+            <a href='@todo'>
+                <picture>
+                    <img src = 'http://via.placeholder.com/573x369' class = 'card-img-top' alt='@todo'>
+                </picture>
+            </a>
+            <div class='cardbody py-3 px-3'>
+                <a href='@todo'>
+                    <h5 class='card-title'>@todo</h5>
+                    <p class ='card-text'>@todo</p>
+                </a>
+
+                <p class='card-text'>
+                    <a href='@todo' class='btn-link d-inline'>
+                     @todo
+                    </a>
+                <p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<-
+
+
+
+{% load wagtailimages_tags %}
+
+{% for card in self.cards %}
+    {% image card.image fill-570x370 as img%}
+
+    <img src = '{{ img.url }} ' alt='{{ img.alt}}'/>
+    <h3>{{ card.title }}</h3>
+    {% if card.text %}
+        <p>{{ card.text }}</p>
+    {% endif %}
+
+   
+
+    <a href='{% if card.link.internal_page %}{{ card.link.internal_page.url }}{% elif card.link.enternal_link %}
+    {{ card.link.external_link }}{% endif %}'>
+        {{ card.link.link_text }}
+    </a>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+{% endfor %}
