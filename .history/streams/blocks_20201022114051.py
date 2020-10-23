@@ -14,18 +14,7 @@ class TitleBlock(blocks.StructBlock):
         label = 'Tytuł'
         help_text = 'Wyśrodkowany tekst do wyświetlenia na stronie.'
 
-class LinkValue(blocks.StructValue):
-    """Dodatkowao logika dla lików"""
-
-    def url(self) -> str:
-        internal_page = self.get('internal_page')
-        external_link = self.get('external_link')
-        if internal_page:
-            return internal_page.url
-        elif external_link:
-            return external_link
-        return ''
-
+class LinkValue()
 class Link(blocks.StructBlock):
     link_text = blocks.CharBlock(
         max_length=50, 

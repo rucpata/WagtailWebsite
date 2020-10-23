@@ -17,7 +17,7 @@ class TitleBlock(blocks.StructBlock):
 class LinkValue(blocks.StructValue):
     """Dodatkowao logika dla lików"""
 
-    def url(self) -> str:
+    def url(self):
         internal_page = self.get('internal_page')
         external_link = self.get('external_link')
         if internal_page:
