@@ -101,15 +101,10 @@ class ImageAndTextBlock(blocks.StructBlock):
         icon = 'image'
         label = 'Obraz & Tekst'
 
-class CallToActionBlock(blocks.StructBlock):
+class CallToActionBlock(blocks.StryctBlock):
 
     title =blocks.CharBlock(
         max_length = 200,
-        help_text = 'Maksymalnie 200 znaków.'
+        
     )
     link = Link()
-    
-    class Meta:
-        template = 'streams/call_to_action_block.html'
-        icon = 'plus'
-        label = 'Wezwanie do działania'

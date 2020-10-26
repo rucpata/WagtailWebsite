@@ -110,6 +110,6 @@ class CallToActionBlock(blocks.StructBlock):
     link = Link()
     
     class Meta:
-        template = 'streams/call_to_action_block.html'
+        templte = 'streams/call_to_action_block.html'
         icon = 'plus'
         label = 'Wezwanie do działania'

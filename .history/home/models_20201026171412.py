@@ -44,7 +44,7 @@ class HomePage(Page):
         ('title', blocks.TitleBlock()),   
         ('cards', blocks.CardsBlock()),
         ('image_and_text', blocks.ImageAndTextBlock()),
-        ('cta', blocks.CallToActionBlock()),
+        ('cla')
     ], null=True, blank=True)
 
     content_panels = Page.content_panels + [
