@@ -47,7 +47,8 @@ class HomePage(Page):
         ('cta', blocks.CallToActionBlock()),
         ('testimonial', SnippetChooserBlock(
             target_model='testimonials.Testimonial',
-            template = 'streams/testimonial_block.html'
+            t
+            
             
         )),
     ], null=True, blank=True)

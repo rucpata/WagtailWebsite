@@ -46,8 +46,8 @@ class HomePage(Page):
         ('image_and_text', blocks.ImageAndTextBlock()),
         ('cta', blocks.CallToActionBlock()),
         ('testimonial', SnippetChooserBlock(
-            target_model='testimonials.Testimonial',
-            template = 'streams/testimonial_block.html'
+            target_model='testimonials.Testimonial'
+            
             
         )),
     ], null=True, blank=True)

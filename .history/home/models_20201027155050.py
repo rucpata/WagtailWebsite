@@ -49,6 +49,7 @@ class HomePage(Page):
             target_model='testimonials.Testimonial',
             template = 'streams/testimonial_block.html'
             
+            
         )),
     ], null=True, blank=True)
 
