@@ -32,7 +32,7 @@ class FlexPage(Page):
             help_text = 'Ten obraz będzie przycięty do 1200px na 775px',
             template='streams/large_image_block.html'
         ))
-    
+        
     ], null=True, blank=True)
 
     content_panels = Page.content_panels + [

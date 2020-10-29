@@ -3,7 +3,6 @@ from wagtail.core.models import Page
 from wagtail.core.fields import StreamField
 from wagtail.admin.edit_handlers import StreamFieldPanel
 from wagtail.snippets.blocks import SnippetChooserBlock
-from wagtail.images.blocks import ImageChooserBlock
 from wagtail.core import blocks as wagtail_blocks
 
 from streams import blocks
@@ -32,7 +31,6 @@ class FlexPage(Page):
             help_text = 'Ten obraz będzie przycięty do 1200px na 775px',
             template='streams/large_image_block.html'
         ))
-    
     ], null=True, blank=True)
 
     content_panels = Page.content_panels + [
