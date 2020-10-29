@@ -8,30 +8,7 @@ from wagtail.snippets.blocks import SnippetChooserBlock
 from streams import blocks
 
 
-new_table_options = {
-    'minSpareRows': 0,
-    'startRows': 4,
-    'startCols': 4,
-    'colHeaders': False,
-    'rowHeaders': True,
-    'contextMenu': [
-        'row_above',
-        'row_below',
-        '---------',
-        'col_left',
-        'col_right',
-        '---------',
-        'remove_row',
-        'remove_col',
-        '---------',
-        'undo',
-        'redo'
-    ],
-    'editor': 'text',
-    'stretchH': 'all',
-    'renderer': 'text',
-    'autoColumnSize': False,
-}
+new_table_option = 
 
 
 class HomePage(Page):

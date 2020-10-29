@@ -8,7 +8,7 @@ from wagtail.snippets.blocks import SnippetChooserBlock
 from streams import blocks
 
 
-new_table_options = {
+new_table_option = {
     'minSpareRows': 0,
     'startRows': 4,
     'startCols': 4,
@@ -29,6 +29,8 @@ new_table_options = {
     ],
     'editor': 'text',
     'stretchH': 'all',
+    'height': 108,
+    'language': language,
     'renderer': 'text',
     'autoColumnSize': False,
 }

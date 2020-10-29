@@ -114,11 +114,8 @@ class CallToActionBlock(blocks.StructBlock):
         icon = 'plus'
         label = 'Wezwanie do działania'
 
-class PricingTableBlock(TableBlock):
+class PracingTableBlock(TableBlock):
     """Blok tabeli cen."""
 
     class Meta:
-        template = 'streams/pricing_table_block.html'
-        label = 'Tabela cen'
-        icon = 'table'
-        help_text = 'Twoje tabele z cenami powinny zawierać zawsze 4 kolumny.'
+        tempates = 'streams/pricing_table_bloc'

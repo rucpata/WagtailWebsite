@@ -114,11 +114,69 @@ class CallToActionBlock(blocks.StructBlock):
         icon = 'plus'
         label = 'Wezwanie do działania'
 
-class PricingTableBlock(TableBlock):
+class PracingTableBlock(TableBlock):
     """Blok tabeli cen."""
 
     class Meta:
-        template = 'streams/pricing_table_block.html'
+        tempates = 'streams/{% load table_block_tags %}
+
+<table>
+    {% if table_caption %}
+       <caption>{{ table_caption }}</caption>
+    {% endif %}
+    {% if table_header %}
+        <thead>
+        <tr>
+            {% for column in table_header %}
+            {% with forloop.counter0 as col_index %}
+                <th scope="col" {% cell_classname 0 col_index %}>
+                    {% if column.strip %}
+                        {% if html_renderer %}
+                            {{ column.strip|safe|linebreaksbr }}
+                        {% else %}
+                            {{ column.strip|linebreaksbr }}
+                        {% endif %}
+                    {% endif %}
+                </th>
+            {% endwith %}
+            {% endfor %}
+        </tr>
+        </thead>
+    {% endif %}
+    <tbody>
+    {% for row in data %}
+    {% with forloop.counter0 as row_index %}
+        <tr>
+            {% for column in row %}
+            {% with forloop.counter0 as col_index %}
+                {% if first_col_is_header and forloop.first %}
+                    <th scope="row" {% cell_classname row_index col_index table_header %}>
+                        {% if column.strip %}
+                            {% if html_renderer %}
+                                {{ column.strip|safe|linebreaksbr }}
+                            {% else %}
+                                {{ column.strip|linebreaksbr }}
+                            {% endif %}
+                        {% endif %}
+                    </th>
+                 {% else %}
+                    <td {% cell_classname row_index col_index table_header %}>
+                        {% if column.strip %}
+                            {% if html_renderer %}
+                                {{ column.strip|safe|linebreaksbr }}
+                            {% else %}
+                                {{ column.strip|linebreaksbr }}
+                            {% endif %}
+                        {% endif %}
+                    </td>
+                 {% endif %}
+            {% endwith %}
+            {% endfor %}
+        </tr>
+    {% endwith %}
+    {% endfor %}
+    </tbody>
+</table>.html'
         label = 'Tabela cen'
         icon = 'table'
         help_text = 'Twoje tabele z cenami powinny zawierać zawsze 4 kolumny.'
