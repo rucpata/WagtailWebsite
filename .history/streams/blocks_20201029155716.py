@@ -55,10 +55,7 @@ class Link(blocks.StructBlock):
         if internal_page and external_link:
             errors['internal_page'] = ErrorList(['Nie można wybrać obu pól jednocześnie. Proszę wybrać jedną opcję.'])
             errors['external_link'] = ErrorList(['Nie można wybrać obu pól jednocześnie. Proszę wybrać jedną opcję.'])
-        elif not internal_page and not external_link:
-            errors['internal_page'] = ErrorList(['Proszę wybierz jedną ze stron wewnętrznych LUB wprowadź adres URL do strony zewnętrznej.'])
-            errors['external_link'] = ErrorList(['Proszę wybierz jedną ze stron wewnętrznych LUB wprowadź adres URL do strony zewnętrznej.'])
-        
+        elif not 
         if errors:
             raise ValidationError('Błąd weryfikacji w Twoim linku', params=errors)
         

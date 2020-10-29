@@ -59,6 +59,7 @@ class Link(blocks.StructBlock):
             errors['internal_page'] = ErrorList(['Proszę wybierz jedną ze stron wewnętrznych LUB wprowadź adres URL do strony zewnętrznej.'])
             errors['external_link'] = ErrorList(['Proszę wybierz jedną ze stron wewnętrznych LUB wprowadź adres URL do strony zewnętrznej.'])
         
+
         if errors:
             raise ValidationError('Błąd weryfikacji w Twoim linku', params=errors)
         

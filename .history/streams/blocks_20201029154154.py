@@ -2,10 +2,8 @@ from django import forms
 from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.contrib.table_block.blocks import TableBlock
-
-#Walidacja problemu
+#Walidacja 
 from django.core.exceptions import ValidationError
-from django.forms.utils import ErrorList
 
 class TitleBlock(blocks.StructBlock):
     text = blocks.CharBlock(
@@ -47,23 +45,6 @@ class Link(blocks.StructBlock):
 
     class Meta:
         value_class = LinkValue
-
-    def clean(self, value):
-        internal_page = value.get('internal_page')
-        external_link = value.get('external_link')
-        errors = {}
-        if internal_page and external_link:
-            errors['internal_page'] = ErrorList(['Nie można wybrać obu pól jednocześnie. Proszę wybrać jedną opcję.'])
-            errors['external_link'] = ErrorList(['Nie można wybrać obu pól jednocześnie. Proszę wybrać jedną opcję.'])
-        elif not internal_page and not external_link:
-            errors['internal_page'] = ErrorList(['Proszę wybierz jedną ze stron wewnętrznych LUB wprowadź adres URL do strony zewnętrznej.'])
-            errors['external_link'] = ErrorList(['Proszę wybierz jedną ze stron wewnętrznych LUB wprowadź adres URL do strony zewnętrznej.'])
-        
-        if errors:
-            raise ValidationError('Błąd weryfikacji w Twoim linku', params=errors)
-        
-        return super().clean(value)
-
 
 
 class Card(blocks.StructBlock):
