@@ -28,7 +28,7 @@ class ServiceListingPage(Page):
 
 class ServicePage(Page):
     parent_page_types = ['services.ServiceListingPage']
-    subpage_types = []
+    subpage_types = ['']
     tamplate = 'services/service_page.html'
     description = models.TextField(
         blank = True,

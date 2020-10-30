@@ -9,7 +9,7 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 class ServiceListingPage(Page):
     parent_page_types = ['home.HomePage']
     subpage_types = ['services.ServicePage']
-    max_count = 1 
+    max_cout
     tamplate = 'services/service_listing_page.html'
     subtitle = models.TextField(
         blank = True,
@@ -28,7 +28,7 @@ class ServiceListingPage(Page):
 
 class ServicePage(Page):
     parent_page_types = ['services.ServiceListingPage']
-    subpage_types = []
+    subpage_types = ['']
     tamplate = 'services/service_page.html'
     description = models.TextField(
         blank = True,

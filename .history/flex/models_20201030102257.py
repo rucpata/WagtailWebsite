@@ -12,7 +12,7 @@ from home.models import new_table_options
 
 
 class FlexPage(Page):
-    parent_page_types = ["home.HomePage", "flex.FlexPage"]
+    parent_page_type = ["home.HomePag"]
     body = StreamField([
         ('title', blocks.TitleBlock()),   
         ('cards', blocks.CardsBlock()),
