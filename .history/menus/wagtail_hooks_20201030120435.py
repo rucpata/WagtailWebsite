@@ -1,0 +1,1 @@
+""" Kategoria zostanie dodana w pa"""
