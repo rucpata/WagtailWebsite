@@ -12,3 +12,4 @@ def get_menu(slug):
         return Menu.objects.get(slug=slug)
     except Menu.DoesNotExist:
         return Menu.objects.none()
+

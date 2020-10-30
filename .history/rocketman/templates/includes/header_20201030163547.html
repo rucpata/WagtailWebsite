@@ -1,4 +1,4 @@
-l{% load static menu_tags%}
+{% load static menu_tags%}
 
 {% get_menu 'header' as navigation %}
 
@@ -14,19 +14,12 @@ l{% load static menu_tags%}
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                {% for item in navigation.menu_items.all%}
+                {% for item in navigation.menu_items.a %}
                 <li class="nav-item active">
                     <a class="nav-link" href=" {{ item.link }}">
                         {{ item.title }}
                     </a>
                 </li>
-                <!--
-                    {% if item.title == 'Services'%}
-                        <li class="nav-item">
-                            <img src="{% static 'images/logo.png' %}" alt='Rocketman'>
-                        </li>
-                    {% endif %}
-                -->
                 {% endfor %}
             </ul>
             

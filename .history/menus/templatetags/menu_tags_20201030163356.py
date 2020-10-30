@@ -12,3 +12,13 @@ def get_menu(slug):
         return Menu.objects.get(slug=slug)
     except Menu.DoesNotExist:
         return Menu.objects.none()
+
+
+from django.shortcuts import render
+from django.utils import timezone
+from ..models import Menu
+
+def get_men(request):
+    all_objects = Menu.objects.all()
+    return render(request, 'includes/header.html', {'all_objects': all_objects})
+
