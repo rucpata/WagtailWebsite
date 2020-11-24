@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+    <h3 class='display-1' style='font-size: '>{{ page.title }}</h3>
+    {{ page.intro|richtext}}
+{% endblock content %}
+

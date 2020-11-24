@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags wagtailiamges_tags %}
+
+
+{% block content %}
+    <style>
+
+        .siakara{
+            background: transparent url("/images.") no-repeat local 0% 100%;
+        }
+    </style>
+    
+    <div class='siakara'>
+        <div class='row justify-content-center'>
+            <div class='col-md-8' style='text-align: center'>
+                <h3 class='display-1' style='font-size: 2rem;'>{{ page.title }}</h3>
+                <p>{{ page.intro|richtext}}</p>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-8 mt-md-2' style='text-align: center'>
+                <form action='{% pagurl page %}' method='POST' role='form'>
+                    {% csrf_token %}
+
+                    <button type='submit' class=''>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
