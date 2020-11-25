@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{% load wagtailcore_tags widget_tweaks%}
+
+{% block content %}
+    <div class='row juss'>
+        <div class='col-md-6'>
+            <div class='cc-contact-text'>
+                {{page.thank_you_text|richtext}}
+            </div> 
+        </div>
+    </div>
+{% endblock %}

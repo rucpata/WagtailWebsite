@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+{% load wagtailcore_tags%}
+
+{% block content %}
+    <div class='row justify-content-center mx-auto'>
+        <div class='col-md-8'>
+            <h2 class='font-weight-light displa'>{{page.thank_you_text|richtext}}</h2>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags widget_tweaks%}
+{% load static %}
+
+
+{% block content %}
+
+    <div class='siakara'>
+        <div class='row justify-content-center'>
+            <div class='col-md-8' style='text-align: center'>
+                <h3 class='display-1' style='font-size: 2rem;'>{{ page.title }}</h3>
+                <p>{{ page.intro|richtext}}</p>
+            </div>
+        </div>
+
+        <div class='row justify-content-center'>
+            <div class='col-md-8 mt-md-2' style='text-align: center'>
+                <form action='{% pageurl page %}'  method='POST' role='form'>
+                    {% csrf_token %}
+                    <ul>
+                        {{ form.as_ul }}
+                    </ul>
+
+                    {% for field in form %}
+                        <div class='row'>
+
+                            <div class ='col-sm-12'>
+                                {% if field|widget_type == 'textarea' %}
+                                    <div class='form-group'>
+                                        <label for='{{ field.label }}'>
+                                            {% if field.field.required %}(required){% endif %}
+                                        </label>
+                                        {% render_field field class+='form-control' rows='6' placeholder=field.label %}
+                                        {% if field.errors %}
+                                            <small class='d-block text-danger text-small cc-font-light'>
+                                                {% for err in field.errors %}
+                                                    * {{ err|escape }}{% if not forloop.last %}<br/>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </small>
+                                        {% endif %}
+                                        {% if field.help_text %}
+                                            <small class='form-text text-muted cc-font-light'>{{field.help_text|safe}}</small>
+                                        {% endif %}
+                                    </div>
+                                {% else %}
+                                    {% if field.label != '' %}
+                                        <div class='form-group'>
+                                            <label for='{{ field.id_for_label }}'>
+                                                {{ field.label }}
+                                                {% if field.field.required %}(required){% endif %}
+                                            </label>
+                                            {% render_field field class+='form-control' placeholder=field.label %}
+                                            {% if field.errors %}
+                                            <small class='d-block text-danger text-small cc-font-light'>
+                                                {% for err in field.errors %}
+                                                    * {{ err|escape }}{% if not forloop.last %}<br/>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </small>
+                                            {% endif %}
+                                            {% if field.help_text %}
+                                                <small class='form-text text-muted cc-font-light'>
+                                                    {{field.help_text|safe }}
+                                                </small>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                {% endif%}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <button type='submit' class='btn btn-outline-info' style='width: 150 px; padding-left: 3.5 rem; padding-right: 3.5rem;'>wyślij</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+

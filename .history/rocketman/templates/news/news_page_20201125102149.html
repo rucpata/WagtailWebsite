@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags widget_tweaks%}
+{% load static %}
+
+
+{% block content %}
+
+    <div class='siakara'>
+        <div class='row justify-content-center'>
+            <div class='col-md-8' style='text-align: center'>
+                <h3 class='display-1' style='font-size: 2rem;'>{{ page.title }}</h3>
+                <p>{{ page.intro|richtext}}</p>
+            </div>
+        </div>
+
+        <div class='row justify-content-center'>
+            <div class='col-md-8 mt-md-2' style='text-align: center'>
+                <form action='{% pageurl page %}'  method='POST' role='form'>
+                    {% csrf_token %}
+                    <ul>
+                        {{ form.as_ul }}
+                    </ul>
+
+                    {% for field in form %}
+                        <div class='row'>
+
+                            <div class ='col-sm-12'>
+                                {% if field|widget_type == 'textarea' %}
+                                    <div class='form-gro'
+                            </div>
+                        </div>
+                    <button type='submit' class=''>wyślij</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
