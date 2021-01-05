@@ -1,0 +1,9 @@
+import os
+from .base import *
+
+DEBUG = False
+SECRET_KET
+try:
+    from .local import *
+except ImportError:
+    pass
